@@ -5,21 +5,28 @@ var express = require('express'),
 
 var apiKey = config.forecastIOApiKey;
 
-/* GET users listing. */
+//A simple proxy for forecast.io current weather service
 router.get('/current', function(req, res) {
     var weatherPath = 'https://api.forecast.io/forecast/'+apiKey+'/37.8267,-122.423'
-
-    http.get(weatherPath,function(weatherResponse){
-        res.status(200).json(weatherResponse)
+    https.get(weatherPath,function(weatherRes){
+        weatherRes.pipe(res)
     })
     .on('error',function(e){
+        console.log(arguments)
         res.status(500).json(e)
     })
-
 });
 
+//A simple proxy for forecast.io weather forecast service
 router.get('/forecast', function(req, res) {
-  res.send('respond with a resource');
+      var weatherPath = 'https://api.forecast.io/forecast/'+apiKey+'/37.8267,-122.423'
+    https.get(weatherPath,function(weatherRes){
+        weatherRes.pipe(res)
+    })
+    .on('error',function(e){
+        console.log(arguments)
+        res.status(500).json(e)
+    })
 });
 
 module.exports = router;
