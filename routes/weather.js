@@ -1,6 +1,6 @@
 var express = require('express'),
     router = express.Router(),
-    http = require('http'),
+    https = require('https'),
     config = require('config');
 
 var apiKey = config.forecastIOApiKey;
