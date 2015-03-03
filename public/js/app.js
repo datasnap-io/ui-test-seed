@@ -9,7 +9,7 @@ angular.module('ds.weatherApp',['ui.router'])
         })
 
 })
-.controller('HomeController'function(){
+.controller('HomeController',function(){
     console.log('Hey I am the home controller');
 })
 
