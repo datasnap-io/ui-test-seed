@@ -6,7 +6,7 @@ var express = require('express'),
 router.get('/', function(req, res) {
 
   res.render('index', {
-        title: 'Datasnap Weather App'
+        title: 'Datasnap Weather App',
         apiKey: config.forecastIOApiKey
     });
 });
