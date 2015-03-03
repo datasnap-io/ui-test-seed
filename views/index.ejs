@@ -9,7 +9,10 @@
     <script src="/bower_modules/angular/angular.js"></script>
     <script src="/bower_modules/angular-ui-router/release/angular-ui-router.js"></script>
     <script>
-        var DS.forecastIoAPIKey = "<%= apiKey %>";
+        //Let our API key be provided by our controller
+        var DS = {
+            forecastIoAPIKey : "<%= apiKey %>"
+        };
     </script>
     <script src="/dist/js/app.js"></script>
   </body>
