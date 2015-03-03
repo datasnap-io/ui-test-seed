@@ -1,8 +1,13 @@
 angular.module('ds.weatherApp',['ui.router'])
-.config(function( $stateProvider, $url){
+.config(function( $stateProvider, $urlRouterProvider){
 
-    $stateProvider.
-        state('home',{
+    //Set up some routing path rules
+    $urlRouterProvider
+        .when('','/')
+
+    //Set up our route handler rules
+    $stateProvider
+        .state('home',{
             url:'/',
             controller:'HomeController',
             templateUrl:'./templates/HomeTemplate.html'
